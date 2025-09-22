@@ -1,0 +1,31 @@
+package com.org.productexplorer.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.org.productexplorer.dao.NavigationDao;
+import com.org.productexplorer.entity.Navigation;
+
+@Service
+public class Navigationservice {
+ 
+	@Autowired
+    private NavigationDao navigationDao; 
+
+	public Navigation create(Navigation nav) {
+        if (nav.getCategories() != null) {
+            nav.getCategories().forEach(category -> category.setNavigation(nav));
+        }
+        return navigationDao.save(nav);
+    }
+
+    public List<Navigation> getAll() {
+        return navigationDao.findAll();
+    }
+
+    public Navigation getById(Long id) {
+        return navigationDao.findById(id).orElse(null);
+    }
+}

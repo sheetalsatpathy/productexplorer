@@ -1,0 +1,23 @@
+package com.org.productexplorer.entity;
+
+import java.time.LocalDateTime;
+
+import jakarta.persistence.*;
+import jakarta.persistence.Id;
+import lombok.Data;
+@Entity
+@Data
+public class ViewHistory {
+
+	 @Id
+	 @GeneratedValue(strategy = GenerationType.IDENTITY)
+	    private Long id;
+
+	    private String userId;    
+	    private String sessionId;
+
+	    @Column(columnDefinition = "TEXT")
+	    private String pathJson;
+
+	    private LocalDateTime createdAt; 
+}

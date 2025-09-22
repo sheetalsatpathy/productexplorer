@@ -1,0 +1,5 @@
+package com.org.productexplorer.entity;
+
+public class Product {
+
+}

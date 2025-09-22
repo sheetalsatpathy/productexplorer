@@ -1,0 +1,23 @@
+package com.org.productexplorer.entity;
+
+import java.time.LocalDateTime;
+
+import jakarta.persistence.*;
+import lombok.Data;
+
+@Entity
+@Data
+public class ScrapeJob {
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String targetUrl;
+    private String targetType; 
+    private String status;     
+    private LocalDateTime startedAt;
+    private LocalDateTime finishedAt;
+
+    @Column(columnDefinition = "TEXT")
+    private String errorLog; 
+}

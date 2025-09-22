@@ -1,0 +1,28 @@
+package com.org.productexplorer.entity;
+
+import java.time.LocalDateTime;
+
+import jakarta.persistence.*;
+import jakarta.persistence.Id;
+import lombok.Data;
+
+@Entity
+@Data
+public class Review {
+
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @ManyToOne
+    @JoinColumn(name="product_id")
+    private Product product;
+
+    private String author;
+    private Integer rating;
+
+    @Column(columnDefinition = "TEXT")
+    private String text;
+
+    private LocalDateTime createdAt;
+}

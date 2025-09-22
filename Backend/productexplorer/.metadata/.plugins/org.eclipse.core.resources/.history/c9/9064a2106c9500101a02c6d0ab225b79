@@ -1,0 +1,15 @@
+package com.org.productexplorer.repository;
+
+import java.util.Optional;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.org.productexplorer.entity.Product;
+
+public interface ProductRepository extends JpaRepository<Product, Long>{
+ 
+	Optional<Product> findBySourceId(String sourceId);
+    Optional<Product> findBySourceUrl(String sourceUrl);
+    Page<Product> findByCategoryId(Long categoryId);
+}

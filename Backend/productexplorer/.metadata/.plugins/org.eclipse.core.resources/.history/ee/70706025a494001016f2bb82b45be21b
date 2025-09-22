@@ -1,0 +1,5 @@
+package com.org.productexplorer.Service;
+
+public class NavigationService {
+
+}

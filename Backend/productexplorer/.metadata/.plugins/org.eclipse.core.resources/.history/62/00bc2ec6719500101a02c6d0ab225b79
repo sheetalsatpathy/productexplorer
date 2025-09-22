@@ -1,0 +1,18 @@
+package com.org.productexplorer.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.org.productexplorer.dao.ProductDetailDao;
+import com.org.productexplorer.entity.ProductDetail;
+
+@Service
+public class ProductDetailService {
+
+	@Autowired 
+	private ProductDetailDao productDetailDao;
+	
+	public ProductDetail create(ProductDetail detail) {
+        return productDetailDao.save(detail);
+    }
+}

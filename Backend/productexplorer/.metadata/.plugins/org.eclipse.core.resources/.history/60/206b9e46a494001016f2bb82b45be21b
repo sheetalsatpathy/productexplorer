@@ -1,0 +1,26 @@
+package com.org.productexplorer.Controller;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.org.productexplorer.entity.Navigation;
+import com.org.productexplorer.repository.NavigationRepository;
+
+@RestController
+@RequestMapping("/api/navigation")
+public class NavigationController {
+   
+	private final NavigationRepository navRepo;
+
+    public NavigationController(NavigationRepository navRepo) {
+        this.navRepo = navRepo;
+           
+    }
+    @PostMapping
+    public Navigation create(@RequestBody Navigation nav) {
+        return navRepo.save(nav);
+    }
+    
+}

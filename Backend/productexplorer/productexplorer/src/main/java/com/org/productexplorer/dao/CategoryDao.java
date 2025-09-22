@@ -1,0 +1,44 @@
+package com.org.productexplorer.dao;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.org.productexplorer.entity.Category;
+import com.org.productexplorer.repository.CategoryRepository;
+
+@Repository
+public class CategoryDao {
+	 @Autowired
+	    private CategoryRepository categoryRepository;
+
+	    public Category save(Category category) {
+	        return categoryRepository.save(category);
+	    }
+
+	    public List<Category> findAll() {
+	        return categoryRepository.findAll();
+	    }
+
+	    public Optional<Category> findById(Long id) {
+	        return categoryRepository.findById(id);
+	    }
+
+	    public void deleteById(Long id) {
+	        categoryRepository.deleteById(id);
+	    }
+	    public boolean existsById(Long id) {
+	        return categoryRepository.existsById(id);
+	    }
+
+	    public List<Category> findByNavigationId(Long navigationId) {
+	        return categoryRepository.findByNavigationId(navigationId);
+	    }
+
+	    public List<Category> findByParentId(Long parentId) {
+	        return categoryRepository.findByParentId(parentId);
+	    }
+
+}

@@ -1,0 +1,5 @@
+package com.org.productexplorer.repository;
+
+public interface NavigationRepository {
+
+}

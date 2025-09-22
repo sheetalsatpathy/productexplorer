@@ -1,0 +1,28 @@
+package com.org.productexplorer.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.org.productexplorer.entity.Navigation;
+import com.org.productexplorer.repository.NavigationRepository;
+
+@Service
+public class Navigationservice {
+ 
+	@Autowired
+    private NavigationRepository navRepo;
+
+    public Navigation create(Navigation nav) {
+        return navRepo.save(nav);
+    }
+
+    public List<Navigation> getAll() {
+        return navRepo.findAll();
+    }
+
+    public Navigation getById(Long id) {
+        return navRepo.findById(id).orElse(null);
+    }
+}

@@ -1,0 +1,5 @@
+package com.org.productexplorer.Controller;
+
+public class NavigationController {
+
+}

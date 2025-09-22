@@ -1,0 +1,36 @@
+package com.org.productexplorer.dao;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.org.productexplorer.entity.Navigation;
+import com.org.productexplorer.repository.NavigationRepository;
+
+@Repository
+public class NavigationDao {
+	@Autowired
+    private NavigationRepository navigationRepository;
+
+    public Navigation save(Navigation nav) {
+        return navigationRepository.save(nav);
+    }
+
+    public List<Navigation> findAll() {
+        return navigationRepository.findAll();
+    }
+
+    public Optional<Navigation> findById(Long id) {
+        return navigationRepository.findById(id);
+    }
+
+    public Navigation findBySlug(String slug) {
+        return navigationRepository.findBySlug(slug);
+    }
+
+    public void delete(Navigation nav) {
+        navigationRepository.delete(nav);
+    }
+}
