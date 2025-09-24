@@ -1,0 +1,5 @@
+package com.org.productexplorer.config;
+
+public class CorsConfig {
+
+}
