@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage-product</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Manage-product</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="categories.html">Categories</a>
+            <a href="products.html">Products</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="history.html">View History</a>
+            <a href="manage-products.html">Manage Products</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2>Manage Products</h2>
+        <div class="action-tabs">
+            <button onclick="showSection('add')">Add Product</button>
+            <button onclick="showSection('update')">Update Product</button>
+            <button onclick="showSection('delete')">Delete Product</button>
+        </div>
+
+        <!-- Add Product -->
+        <section id="add" class="action-section">
+            <h3>Add Product</h3>
+            <form id="add-product-form">
+                <input type="text" id="add-title" placeholder="Title" required>
+                <input type="text" id="Last scraped" placeholder="Last scraped">
+                <input type="number" id="add-price" placeholder="Price" required>
+                <input type="text" id="add-imageUrl" placeholder="Image URL">
+                <button type="submit">Add</button>
+            </form>
+        </section>
+
+        <!-- Update Product -->
+        <section id="update" class="action-section">
+            <h3>Update Product</h3>
+            <form id="update-product-form">
+                <input type="number" id="update-id" placeholder="Product ID" required>
+                <input type="text" id="update-title" placeholder="New Title">
+                <input type="text" id="update-description" placeholder="New Description">
+                <input type="number" id="update-price" placeholder="New Price">
+                <input type="text" id="update-imageUrl" placeholder="New Image URL">
+                <button type="submit">Update</button>
+            </form>
+        </section>
+
+        <!-- Delete Product -->
+        <section id="delete" class="action-section">
+            <h3>Delete Product</h3>
+            <form id="delete-product-form">
+                <input type="number" id="delete-id" placeholder="Product ID" required>
+                <button type="submit">Delete</button>
+            </form>
+        </section>
+    </main>
+    <script src="./scripts.js"></script>
+</body>
+
+</html>
